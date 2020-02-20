@@ -7,21 +7,28 @@ public class Dyrektor extends Employee {
     private String Dodatek="";
     private String Karta="";
     private String Limit="";
+    private String Stanowisko = "";
 
-    public Dyrektor(String imie, String nazwisko, String wynagrodzenie, String stanowisko, String telefon, String dodatek, String karta, String limit) {
-        super(imie, nazwisko, wynagrodzenie, stanowisko, telefon);
-        Dodatek = dodatek;
-        Karta = karta;
-        Limit = limit;
+    public Dyrektor(String imie, String nazwisko, String wynagrodzenie,  String telefon, String dodatek, String karta, String limit) {
+        super(imie, nazwisko, wynagrodzenie, telefon);
+        this.Dodatek = dodatek + "zł";
+        this.Karta = karta;
+        this.Limit = limit + "zł";
+        this.Stanowisko="Dyrektor";
+
     }
 
     @Override
     public String toString() {
-        return "Dyrektor{" +
+
+
+        return   "Dyrektor{" +
+
                 "Dodatek='" + Dodatek + '\'' +
                 ", Karta='" + Karta + '\'' +
                 ", Limit='" + Limit + '\'' +
-                '}';
+                ", Stanowisko='" + Stanowisko + '\'' +
+                '}'+"\n";
     }
 
     @Override
@@ -32,11 +39,12 @@ public class Dyrektor extends Employee {
         Dyrektor dyrektor = (Dyrektor) o;
         return Dodatek.equals(dyrektor.Dodatek) &&
                 Karta.equals(dyrektor.Karta) &&
-                Limit.equals(dyrektor.Limit);
+                Limit.equals(dyrektor.Limit) &&
+                Stanowisko.equals(dyrektor.Stanowisko);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), Dodatek, Karta, Limit);
+        return Objects.hash(super.hashCode(), Dodatek, Karta, Limit, Stanowisko);
     }
 }

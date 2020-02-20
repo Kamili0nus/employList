@@ -6,11 +6,13 @@ public class Handlowiec extends Employee {
 
     private String prowizja ="";
     private String limitProwizji ="";
+    private String Stanowisko = "";
 
-    public Handlowiec(String imie, String nazwisko, String wynagrodzenie, String stanowisko, String telefon, String prowizja, String limitProwizji) {
-        super(imie, nazwisko, wynagrodzenie, stanowisko, telefon);
-        this.prowizja = prowizja;
-        this.limitProwizji = limitProwizji;
+    public Handlowiec(String imie, String nazwisko, String wynagrodzenie, String telefon, String prowizja, String limitProwizji) {
+        super(imie, nazwisko, wynagrodzenie, telefon);
+        this.prowizja = prowizja + "%";
+        this.limitProwizji = limitProwizji + "zł";
+        this.Stanowisko="Handlowiec";
     }
 
     @Override
@@ -18,7 +20,8 @@ public class Handlowiec extends Employee {
         return "Handlowiec{" +
                 "prowizja='" + prowizja + '\'' +
                 ", limitProwizji='" + limitProwizji + '\'' +
-                '}';
+                ", Stanowisko='" + Stanowisko + '\'' +
+                '}'+"\n";
     }
 
     @Override
@@ -28,11 +31,12 @@ public class Handlowiec extends Employee {
         if (!super.equals(o)) return false;
         Handlowiec that = (Handlowiec) o;
         return prowizja.equals(that.prowizja) &&
-                limitProwizji.equals(that.limitProwizji);
+                limitProwizji.equals(that.limitProwizji) &&
+                Stanowisko.equals(that.Stanowisko);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), prowizja, limitProwizji);
+        return Objects.hash(super.hashCode(), prowizja, limitProwizji, Stanowisko);
     }
 }

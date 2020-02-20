@@ -2,21 +2,19 @@ package EmployList;
 
 import java.util.Objects;
 
-class Employee {
+abstract class Employee {
 
     static int count=0;
     private String Imie = "";
     private String Nazwisko = "";
     private String Wynagrodzenie = "";
-    private String Stanowisko = "";
     private String Telefon = "";
 
-    public Employee( String imie, String nazwisko, String wynagrodzenie, String stanowisko, String telefon) {
+    public Employee( String imie, String nazwisko, String wynagrodzenie, String telefon) {
         count++;
         Imie = imie;
         Nazwisko = nazwisko;
-        Wynagrodzenie = wynagrodzenie;
-        Stanowisko = stanowisko;
+        Wynagrodzenie = wynagrodzenie+"zł";
         Telefon = telefon;
     }
 
@@ -28,23 +26,16 @@ class Employee {
         return Imie.equals(employee.Imie) &&
                 Nazwisko.equals(employee.Nazwisko) &&
                 Wynagrodzenie.equals(employee.Wynagrodzenie) &&
-                Stanowisko.equals(employee.Stanowisko) &&
                 Telefon.equals(employee.Telefon);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Imie, Nazwisko, Wynagrodzenie, Stanowisko, Telefon);
+        return Objects.hash(Imie, Nazwisko, Wynagrodzenie, Telefon);
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "Imie='" + Imie + '\'' +
-                ", Nazwisko='" + Nazwisko + '\'' +
-                ", Wynagrodzenie='" + Wynagrodzenie + '\'' +
-                ", Stanowisko='" + Stanowisko + '\'' +
-                ", Telefon='" + Telefon + '\'' +
-                '}';
+        return  "";
     }
 }

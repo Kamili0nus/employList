@@ -1,14 +1,19 @@
 package EmployList;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
 public class employeeList {
 
-    private List<Employee> Catalog;
-
+    private List<Employee> Catalog = new LinkedList<>();
+/*
     public employeeList(List<Employee> catalog) {
         Catalog = catalog;
+    }
+*/
+    public employeeList() {
+
     }
 
     public void addEmploye(Employee employee){
